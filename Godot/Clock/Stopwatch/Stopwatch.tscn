@@ -1,15 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Clock/Stopwatch/Stopwatch.gd" type="Script" id=1]
 [ext_resource path="res://Clock/Stopwatch/Lap/Lap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://clock_theme.tres" type="Theme" id=3]
 
 [node name="Stopwatch" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 20
-custom_constants/margin_top = 20
-custom_constants/margin_left = 20
-custom_constants/margin_bottom = 20
+theme = ExtResource( 3 )
 script = ExtResource( 1 )
 reset_button = NodePath("VBoxContainer/HBoxContainer/Reset")
 play_pause_button = NodePath("VBoxContainer/HBoxContainer/PlayPause")
@@ -23,11 +21,12 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = 1004.0
 margin_bottom = 580.0
-custom_constants/separation = 20
+theme = ExtResource( 3 )
 
 [node name="ElapsedTimeLabel" type="Label" parent="VBoxContainer"]
 margin_right = 984.0
 margin_bottom = 14.0
+text = "0.0"
 align = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
@@ -47,7 +46,7 @@ alignment = 1
 margin_top = 540.0
 margin_right = 984.0
 margin_bottom = 560.0
-custom_constants/separation = 20
+theme = ExtResource( 3 )
 alignment = 1
 
 [node name="Reset" type="Button" parent="VBoxContainer/HBoxContainer"]

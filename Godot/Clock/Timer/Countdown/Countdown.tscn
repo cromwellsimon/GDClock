@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Clock/Timer/Countdown/Countdown.gd" type="Script" id=1]
+[ext_resource path="res://clock_theme.tres" type="Theme" id=2]
+
+[node name="Countdown" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+play_pause_button = NodePath("ButtonsContainer/PlayPause")
+time_remaining_label = NodePath("TimeRemaining")
+timer = NodePath("Timer")
+
+[node name="TimeRemaining" type="Label" parent="."]
+margin_top = 293.0
+margin_bottom = 307.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="."]
+margin_left = 20.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+theme = ExtResource( 2 )
+alignment = 2
+
+[node name="Delete" type="Button" parent="ButtonsContainer"]
+margin_left = 879.0
+margin_right = 934.0
+margin_bottom = 600.0
+text = "Delete"
+
+[node name="PlayPause" type="Button" parent="ButtonsContainer"]
+margin_left = 954.0
+margin_right = 1004.0
+margin_bottom = 600.0
+toggle_mode = true
+text = "Pause"
+
+[connection signal="pressed" from="ButtonsContainer/Delete" to="." method="_on_Delete_pressed"]
+[connection signal="pressed" from="ButtonsContainer/PlayPause" to="." method="_on_PlayPause_pressed"]
