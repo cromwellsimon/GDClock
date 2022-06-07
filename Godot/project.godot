@@ -11,8 +11,13 @@ config_version=4
 [application]
 
 config/name="Clock"
+run/main_scene="res://Clock/Clock.tscn"
 run/low_processor_mode=true
 config/icon="res://icon.png"
+
+[autoload]
+
+TimeConverter="*res://TimeConverter/TimeConverter.gd"
 
 [physics]
 

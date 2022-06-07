@@ -1,5 +1,25 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Clock/Alarm/Alarm.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Clock/Stopwatch/Stopwatch.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Clock/Timer/Timer.tscn" type="PackedScene" id=3]
 
 [node name="Clock" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Alarm" parent="TabContainer" instance=ExtResource( 1 )]
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Stopwatch" parent="TabContainer" instance=ExtResource( 2 )]
+visible = false
+
+[node name="Timer" parent="TabContainer" instance=ExtResource( 3 )]
+visible = false
