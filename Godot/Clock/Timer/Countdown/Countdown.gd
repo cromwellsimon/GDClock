@@ -21,3 +21,7 @@ func _on_PlayPause_pressed():
 
 func _on_Delete_pressed():
 	self.queue_free()
+
+
+func _on_Timer_timeout():
+	Events.emit_signal("timer_finished")
